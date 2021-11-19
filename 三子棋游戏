@@ -22,7 +22,7 @@ char IsWin(char board[ROW][COL], int row, int col);
 
 
 
-//text.c
+//test.c
 #define _CRT_SECURE_NO_WARNINGS
 #include "game.h"
 
