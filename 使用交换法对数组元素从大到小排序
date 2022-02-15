@@ -1,0 +1,36 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main()
+{
+	int i, j;
+	int a[10];
+	int iTemp;
+	printf("为数组元素赋值:\n");
+	for (i = 0; i < 10; i++)
+	{
+		printf("a[%d]=", i);
+		scanf("%d", &a[i]);
+	}
+
+	//采用交换法为数组元素从大到小排序
+	for (i = 0; i < 9; i++)
+	{
+		for (j = i + 1; j < 10; j++)
+		{
+			if (a[j] < a[i])
+			{
+				iTemp = a[i];
+				a[i] = a[j];
+				a[j] = iTemp;
+			}
+		}
+	}
+
+	printf("排序结果如下:\n");
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d\t", a[i]);
+	}
+	return 0;
+}
