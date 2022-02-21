@@ -1,0 +1,39 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+	int num;
+	struct tm* sysTime;
+	printf("########################\n");
+	printf("### 1. 显示系统日期 ####\n");
+	printf("### 2. 显示系统时间 ####\n");
+	printf("### 3. 退出系统     ####\n");
+	printf("########################\n");
+	printf("请输入:");
+	while (1)
+	{
+		scanf("%d", &num);//判断输入的字符
+		if (num == 1)
+		{
+			time_t nowTime;
+			time(&nowTime);
+			sysTime = localtime(&nowTime);
+			printf("系统日期:%d-%d-%d\n", 1900 + sysTime->tm_year, sysTime->tm_mon + 1, sysTime->tm_mday);
+		}
+		else if (num == 2)
+		{
+			time_t nowTime;
+			time(&nowTime);
+			sysTime = localtime(&nowTime);
+			printf("系统时间:%d-%d-%d\n", sysTime->tm_hour, sysTime->tm_min, sysTime->tm_sec);
+		}
+		else if (num == 3)
+		{
+			return 0;
+		}
+		printf("请输入:\n");
+	}
+	return 0;
+}
