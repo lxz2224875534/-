@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main()
+{
+	int i;
+	char arr[12] = { "hello world" };
+	char arr2[12] = { 0 };
+	int size;
+	size = sizeof(arr);
+	for (i = 0; i < 11; i++)
+	{
+		arr2[size - i - 2] = arr[i];
+	}
+	printf("输出源字符串:%s\n", arr);
+	printf("输出反转字符串:%s\n", arr2);
+	return 0;
+}
